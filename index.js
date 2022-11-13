@@ -1,7 +1,7 @@
-const FORM = document.getElementsByClassName("form");
+const FORM = document.getElementById("form");
 const INPUT = document.getElementsByClassName("input-serch");
 const BUTTON = document.getElementsByClassName("button");
-const SECTIONCARDS = document.getElementById("section-cards");
+const SECTIONCARDS = document.getElementById("section-cars");
 
 const pizzas = [
   {
@@ -63,7 +63,7 @@ const findPizza = (value) => pizzas.find((pizza) => pizza.id === value);
 const buscarPizza = (e) => {
   e.preventDefault();
   const valorIngresado = INPUT.value;
-  if (!valorIngresado.length) {
+  if (!valorIngresado) {
     SECTIONCARDS.innerHTML = `<div class="error-sin-numero"><h2>Por favor Ingrese un N° menor o = a 6 para buscar su pizza.</h2></div>`;
   } else if (findPizza(valorIngresado) <= 6) {
     SECTIONCARDS.innerHTML = `<div class="pizza.encontrada"><h2>Usted ha elegido la pizza de ${pizza.nombre} </h2>
